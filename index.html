@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: hsl(251, 19%, 18%);
+            color: white;
+        }
+        main {
+            margin: 10% auto;
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+        div {
+            border-radius: 10px;
+            background-color: hsl(251, 19%, 20%);
+            height: 30vh;
+            box-shadow: 0 10px 20px 1px hsl(251, 19%, 5%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 17pt;
+        }
+        input {
+            margin-top: 5%;
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
+    <title>Dollar to cents converter</title>
+</head>
+<body>
+    <main>
+        <h1>Dollar to cents converter</h1>
+        <section>
+            <div>
+                <span id="converted">$0.00</span>
+            </div>
+            <input placeholder="Type dollar value here" type="number" id="dollar">
+        </section>
+    </main>
+    <script>
+        let centsValue
+        let dollarValue
+        setInterval(()=> {
+                dollarValue = document.getElementById('dollar').value
+                centsValue = dollarValue * 100
+                document.querySelector('#converted').innerText = `$0.${centsValue}`            
+            }, 1)
+    </script>
+</body>
+</html>
